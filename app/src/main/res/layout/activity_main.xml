@@ -14,8 +14,12 @@
         android:ems="10"
         android:hint="number"
         android:inputType="number"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="99dp" />
+        app:layout_constraintBottom_toTopOf="@+id/numero2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <EditText
         android:id="@+id/numero2"
@@ -24,44 +28,47 @@
         android:ems="10"
         android:hint="number"
         android:inputType="number"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintBottom_toTopOf="@+id/llOptions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero1" />
 
-    <CheckBox
-        android:id="@+id/checkSumar"
+    <LinearLayout
+        android:id="@+id/llOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sumar"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="389dp" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/botonAccion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numero2">
 
-    <CheckBox
-        android:id="@+id/checkRestar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Restar"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="449dp" />
+        <CheckBox
+            android:id="@+id/checkSumar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sumar" />
+
+        <CheckBox
+            android:id="@+id/checkRestar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restar" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/botonAccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CALCULAR"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="584dp" />
-
-    <Button
-        android:id="@+id/botonLimpiar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clear"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/resultado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/resultado" />
+        app:layout_constraintTop_toBottomOf="@+id/llOptions" />
 
     <TextView
         android:id="@+id/resultado"
@@ -74,5 +81,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonAccion" />
+
+    <Button
+        android:id="@+id/botonLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
